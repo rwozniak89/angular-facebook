@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e --port 4201",
-    "predeploy": "ng build --prod",
+    "predeploy": "ng build --prod --base-href=/angular-facebook/",
     "deploy": "gh-pages -d dist/facebook",
     "postdeploy": "echo 'App was deployed'"
   },
