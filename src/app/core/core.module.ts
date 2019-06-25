@@ -8,18 +8,23 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { PostsModule } from '../posts/posts.module';
+import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
   ],
+
   imports: [
     BrowserModule,
     CoreRoutingModule,
-    PostsModule
+    PostsModule,
+    SharedModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

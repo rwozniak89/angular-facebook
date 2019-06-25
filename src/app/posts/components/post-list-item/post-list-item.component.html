@@ -2,7 +2,11 @@
 <ng-container *ngIf="post">
 
 
-  <div class="card" style="width: 18rem;">
+  <div 
+  class="card" 
+  style="width: 18rem;"
+  >
+
       <!-- <img src="{{ post.images[0] }}" class="card-img-top" alt="..."> -->
       <img [src]="post.images[0]" class="card-img-top" alt="{{ post.images[0] }}">
       <div class="card-body">
