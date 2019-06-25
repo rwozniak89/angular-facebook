@@ -4,6 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { PostsService } from './posts.service';
 import { IPostList } from '../interfaces/post-list.interface';
 import { IPostListItem } from '../interfaces/post-list-item.interface';
+import { environment } from 'src/environments/environment.prod';
 
 describe('PostsService', () => {
 
@@ -44,7 +45,7 @@ describe('PostsService', () => {
       // 1. zarejestrować request
       const response = service.getPosts();
       // 2. utworzyć serwer HTTP, który będzie zwracał mockowe dane
-      const server = httpMock.expectOne('assets/posts.json');
+      const server = httpMock.expectOne(environment.postsUrl);
       // 2b. Zwracamy dane testowe
 
       let fakePostList = [
@@ -71,7 +72,7 @@ describe('PostsService', () => {
 
       const response = service.getPostById(postId);
 
-      const server = httpMock.expectOne('assets/posts.json');
+      const server = httpMock.expectOne(environment.postsUrl);
 
       const fakePost = { id: 'aaaaaaaaaa'} as IPostListItem; 
 

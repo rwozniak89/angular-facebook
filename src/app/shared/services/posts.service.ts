@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IResponsePosts } from '../interfaces/response/response-posts.interface';
 import { IPostList } from '../interfaces/post-list.interface';
 import { IPostListItem } from '../interfaces/post-list-item.interface';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -23,10 +24,10 @@ export class PostsService {
   ) { }
 
   // getPosts() {
-  //   return this.http.get('assets/posts.json').toPromise();
+  //   return this.http.get('environment.postsUrl').toPromise();
   // }
   async getPosts() : Promise<IPostList> {
-    const repsponse = await this.http.get<IResponsePosts>('assets/posts.json').toPromise();
+    const repsponse = await this.http.get<IResponsePosts>(environment.postsUrl).toPromise();
     return repsponse.posts;
   }
 
