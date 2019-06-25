@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostListComponent } from './post-list.component';
 import { PostListItemComponent } from '../post-list-item/post-list-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -17,6 +18,7 @@ describe('PostListComponent', () => {
       ],
        imports: [
         SharedModule,
+        RouterTestingModule,
       ]
 
     })

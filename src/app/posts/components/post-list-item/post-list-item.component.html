@@ -1,29 +1,31 @@
-
 <ng-container *ngIf="post">
 
+    <div
+        class="card"
+        style="width: 18rem;"
+    >
 
-  <div 
-  class="card" 
-  style="width: 18rem;"
-  >
-
-      <!-- <img src="{{ post.images[0] }}" class="card-img-top" alt="..."> -->
-      <img [src]="post.images[0]" class="card-img-top" alt="{{ post.images[0] }}">
-      <div class="card-body">
-        <h5 class="card-title">
-          {{ post.author.name }}
-        </h5>
-        <p class="card-text">
-          
-          {{ post.body }}
-        </p>
-        <h6 class="card-subtitle mb-2 text-muted">
-          <!-- {{ post.created_time | date }} -->
-          {{ post.created_time | myDate }}
-        </h6>
-        <a routerLink="/404" class="btn btn-link">test link</a>
-      </div>
+        <!-- <img src="{{ post.images[0] }}" class="card-img-top" alt="..."> -->
+      <img 
+      [src]="post.images[0]" 
+      class="card-img-top" 
+      title= "{{ post | json }}" 
+      routerLink="/posts/{{ post.id }}"
+      >
+        <div class="card-body">
+            <h5 class="card-title">{{ post.author.name }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <!-- {{ post.created_time | date }} -->
+                {{ post.created_time | myDate }}
+            </h6>
+            <a
+                routerLink="/404"
+                class="btn btn-link"
+            >
+                test link
+            </a>
+        </div>
     </div>
 
-      
 </ng-container>

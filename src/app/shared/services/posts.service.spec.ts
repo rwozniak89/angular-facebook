@@ -63,6 +63,54 @@ describe('PostsService', () => {
       expect(posts).toEqual(fakePostList)
 
     });
+
+    it('should give by HTTP by get one post by id ', async () => {
+ 
+
+      const postId : string = 'aaaaaaaaaa'//'f981825f-a635-51d3-adf2-7b48ad6c4acb';
+
+      const response = service.getPostById(postId);
+
+      const server = httpMock.expectOne('assets/posts.json');
+
+      const fakePost = { id: 'aaaaaaaaaa'} as IPostListItem; 
+
+      // let fakePost2 = {
+      //   "id": "f981825f-a635-51d3-adf2-7b48ad6c4acb",
+      //   "created_time": "Mon Sep 03 2018 12:29:46 GMT+0200 (czas środkowoeuropejski letni)",
+      //   "author": {
+      //     "id": "a1c4085d-8231-5942-ba87-46f6cb6d95b5",
+      //     "name": "Sarina Ryan",
+      //     "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/canapud/128.jpg"
+      //   },
+      //   "body": "Ucwobujo bepwemah siad amajaobi zag ow ripvas obe lifdiped lesojame huahu uvino delugalaj vihdejuwa soburuv vebeugo fenu.",
+      //   "images": [
+      //     "https://picsum.photos/id/11/300/150/",
+      //     "https://picsum.photos/id/655/300/150/",
+      //     "https://picsum.photos/id/809/300/150/",
+      //     "https://picsum.photos/id/500/300/150/",
+      //     "https://picsum.photos/id/225/300/150/"
+      //   ]
+      // } as IPostListItem
+
+      const fakePostList = [
+        fakePost,
+        { id: 'bbbbbbb' },
+      ] as IPostList
+    
+
+      server.flush(
+        {
+          posts: fakePostList
+        }
+      );
+
+      const posts = await response;
+
+      // 4. Sprawdzić poprawność otrzymanych danych
+      expect(posts).toEqual(fakePost);
+
+    });
   
   });
   
