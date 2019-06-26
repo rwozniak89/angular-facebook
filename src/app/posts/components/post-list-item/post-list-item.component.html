@@ -33,7 +33,8 @@
         </div>
         <div class="card-footer text-muted">
 
-            <app-comment-list></app-comment-list>
+            <app-comment-list [comments]="post.comments"
+            ></app-comment-list>
 
             <app-comment-add-form
             (addComment)="onAddComment($event)"

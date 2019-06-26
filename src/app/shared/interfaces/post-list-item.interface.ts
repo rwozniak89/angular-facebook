@@ -1,4 +1,5 @@
 import { IAuthor } from './author.interface';
+import { ICommentList } from './comment-list.interface';
 
 export interface IPostListItem {
     id:           string;
@@ -6,5 +7,6 @@ export interface IPostListItem {
     author:       IAuthor;
     body:         string;
     images:       string[];
+    comments?: ICommentList;
   }
   

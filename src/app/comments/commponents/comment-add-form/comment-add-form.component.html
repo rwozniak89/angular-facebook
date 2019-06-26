@@ -1,7 +1,7 @@
 <div>
     <form
         class="form-inline"
-        (ngSubmit)="onSubmit()"
+        (ngSubmit)="onSubmit(commentForm)"
         #commentForm="ngForm"
     >
         <!-- Template reference variable -->
@@ -44,7 +44,7 @@
             <span *ngIf="body.errors['minlength']">minimum 3 znaki</span>
 
         </small>
-        <pre>Errors: {{body.errors|json}}</pre>
+        <!-- <pre>Errors: {{body.errors|json}}</pre> -->
 
     </form>
 

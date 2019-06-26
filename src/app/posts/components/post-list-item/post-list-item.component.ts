@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { isArray } from 'util';
 
 @Component({
   selector: 'app-post-list-item',
@@ -18,6 +19,14 @@ export class PostListItemComponent implements OnInit {
 
   onAddComment(comment){
     console.log('onAddComment', comment);
+
+    if(!Array.isArray(this.post.comments)){
+      this.post.comments = [];
+    }
+
+    this.post.comments.push(comment);
+
+
   }
 
 }

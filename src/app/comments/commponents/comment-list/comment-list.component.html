@@ -1,4 +1,7 @@
 
-<app-comment-list-item>
+<app-comment-list-item
+*ngFor="let item of comments"
+[comment]="item"
+>
   
 </app-comment-list-item>
