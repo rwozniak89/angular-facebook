@@ -349,6 +349,14 @@ $ ng g i shared/interfaces/comment-list.ts
 
 $ npm install uuid
 
+## zdjęcia z kotami 
+http://placekitten.com/
+
+## servis z danymi
+
+$ ng g s shared/services/storage
+
+
 
 
 

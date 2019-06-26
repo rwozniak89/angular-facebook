@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit {
 
   onAddPost(post){
     this.allPosts.unshift(post);
+    this.postsService.savePosts(this.allPosts);
   }
 
 }
