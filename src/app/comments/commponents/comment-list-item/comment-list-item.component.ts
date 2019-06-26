@@ -17,7 +17,7 @@ export class CommentListItemComponent implements OnInit {
   }
 
   getCommentAuthorAvatarUrl(){
-    return "http://placeskull.com/50/50/000000/"
+    return "http://placeskull.com/50/50/"
   }
 
 }

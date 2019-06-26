@@ -24,4 +24,8 @@ export class HomePageComponent implements OnInit {
     this.allPosts = await this.postsService.getPosts();
   }
 
+  onAddPost(post){
+    this.allPosts.unshift(post);
+  }
+
 }
