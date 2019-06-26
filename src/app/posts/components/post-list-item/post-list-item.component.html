@@ -6,10 +6,11 @@
     >
 
         <!-- <img src="{{ post.images[0] }}" class="card-img-top" alt="..."> -->
+         <!-- title= "{{ post | json }}"  -->
       <img 
       [src]="post.images[0]" 
       class="card-img-top" 
-      title= "{{ post | json }}" 
+     
       routerLink="/posts/{{ post.id }}"
       >
         <div class="card-body">

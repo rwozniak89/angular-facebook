@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IResponsePosts } from '../interfaces/response/response-posts.interface';
 import { IPostList } from '../interfaces/post-list.interface';
 import { IPostListItem } from '../interfaces/post-list-item.interface';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 
 

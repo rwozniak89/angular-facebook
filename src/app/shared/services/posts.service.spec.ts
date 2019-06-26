@@ -4,7 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { PostsService } from './posts.service';
 import { IPostList } from '../interfaces/post-list.interface';
 import { IPostListItem } from '../interfaces/post-list-item.interface';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 describe('PostsService', () => {
 
