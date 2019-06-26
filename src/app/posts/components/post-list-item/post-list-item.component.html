@@ -12,12 +12,13 @@
             <div class="text-left">
                 <h5 class="card-title">{{ post.author.name }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
-                <a href="" routerLink="/posts/{{ post.id }}">
-                   
+                    <a
+                        href
+                        routerLink="/posts/{{ post.id }}"
+                    >
                         {{ post.created_time | myDate }}
-                   
-                </a>
-            </h6>
+                    </a>
+                </h6>
             </div>
 
         </div>
@@ -30,7 +31,13 @@
             <p class="card-text">{{ post.body }}</p>
 
         </div>
-        <div class="card-footer text-muted">...</div>
+        <div class="card-footer text-muted">
+
+            <app-comment-list></app-comment-list>
+
+            <app-comment-add-form></app-comment-add-form>
+
+        </div>
     </div>
 
 </ng-container>

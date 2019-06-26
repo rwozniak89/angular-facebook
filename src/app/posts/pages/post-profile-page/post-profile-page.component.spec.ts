@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CommentsModule } from 'src/app/comments/comments.module';
 
 describe('PostProfilePageComponent', () => {
   let component: PostProfilePageComponent;
@@ -20,7 +21,8 @@ describe('PostProfilePageComponent', () => {
        imports: [
         SharedModule,
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        CommentsModule,
       ]
     })
     .compileComponents();
