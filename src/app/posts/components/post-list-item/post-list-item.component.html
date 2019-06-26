@@ -1,32 +1,36 @@
 <ng-container *ngIf="post">
 
-    <div
-        class="card"
-        style="width: 18rem;"
-    >
+    <div class="card text-center m-3">
+        <div class="card-header d-flex">
 
-        <!-- <img src="{{ post.images[0] }}" class="card-img-top" alt="..."> -->
-         <!-- title= "{{ post | json }}"  -->
-      <img 
-      [src]="post.images[0]" 
-      class="card-img-top" 
-     
-      routerLink="/posts/{{ post.id }}"
-      >
-        <div class="card-body">
-            <h5 class="card-title">{{ post.author.name }}</h5>
-            <p class="card-text">{{ post.body }}</p>
-            <h6 class="card-subtitle mb-2 text-muted">
-                <!-- {{ post.created_time | date }} -->
-                {{ post.created_time | myDate }}
-            </h6>
-            <a
-                routerLink="/404"
-                class="btn btn-link"
+            <img
+                class="avatar mr-3 rounded-sm"
+                [src]="post.author.avatar_url"
+                routerLink="/posts/{{ post.id }}"
             >
-                test link
-            </a>
+
+            <div class="text-left">
+                <h5 class="card-title">{{ post.author.name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                <a href="" routerLink="/posts/{{ post.id }}">
+                   
+                        {{ post.created_time | myDate }}
+                   
+                </a>
+            </h6>
+            </div>
+
         </div>
+        <img
+            [src]="post.images[0]"
+            class="card-img-top"
+        >
+        <div class="card-body">
+
+            <p class="card-text">{{ post.body }}</p>
+
+        </div>
+        <div class="card-footer text-muted">...</div>
     </div>
 
 </ng-container>
