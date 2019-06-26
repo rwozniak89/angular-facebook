@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-comment-add-form',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentAddFormComponent implements OnInit {
 
+  comment = {
+    body: null
+  }
+
+  @Output() addComment = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('onSubmit()', this.comment);
+    this.addComment.next(this.comment);
   }
 
 }

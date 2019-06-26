@@ -35,7 +35,9 @@
 
             <app-comment-list></app-comment-list>
 
-            <app-comment-add-form></app-comment-add-form>
+            <app-comment-add-form
+            (addComment)="onAddComment($event)"
+            ></app-comment-add-form>
 
         </div>
     </div>

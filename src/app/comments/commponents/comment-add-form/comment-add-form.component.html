@@ -1,9 +1,51 @@
+<div>
+    <form
+        class="form-inline"
+        (ngSubmit)="onSubmit()"
+        #commentForm="ngForm"
+    >
+        <!-- Template reference variable -->
+        <!-- margines-> mx-sm-3  margines na dole ->mb-2" -->
 
-<form class="form-inline">
-    <!-- margines-> mx-sm-3  margines na dole ->mb-2" -->
-    <div class="form-group mr-3">
-      <input type="text" class="form-control"
-       placeholder="Wpisz komentarz...">
-    </div>
-    <button type="submit" class="btn btn-primary">Dodaj</button>
-</form>
+        <div class="form-group mr-3">
+            <input
+                type="text"
+                class="form-control"
+                [class.is-invalid]="body.invalid && body.dirty"
+                placeholder="Wpisz komentarz..."
+                name="body"
+                [(ngModel)]="comment.body"
+                #body="ngModel"
+                required
+                minlength="3"
+                maxlength="8"
+            >
+        </div>
+        <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="commentForm.invalid"
+        >
+            Dodaj
+        </button>
+        <!-- <button
+            type="button"
+            class="btn btn-primary"
+            (click)="commentForm.reset()"
+        >
+            Reset
+        </button> -->
+
+        <small
+            class="alert alert-danger"
+            *ngIf="body.errors && body.touched"
+        >
+            <span *ngIf="body.errors['required']">Aby dodać komentarz wpisz tekst</span>
+            <span *ngIf="body.errors['minlength']">minimum 3 znaki</span>
+
+        </small>
+        <pre>Errors: {{body.errors|json}}</pre>
+
+    </form>
+
+</div>
