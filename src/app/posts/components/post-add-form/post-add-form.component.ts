@@ -34,7 +34,7 @@ get body(){
       avatar_url: 'http://placeskull.com/50/50/E4317F',
     }
     fields.id = uuid();
-    fields.create_time = new Date().toUTCString();
+    fields.created_time = new Date().toUTCString();
     fields.images = 
       [
         'http://placekitten.com/408/287'
