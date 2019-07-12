@@ -29,11 +29,14 @@ https://github.com/rwozniak89
 http://10.10.6.4/angular-guide/#/chapters/cli
 
 git bash
-$ ssh-keygen -t rsa -C altkom-sala-06
+
+$ ssh-keygen -t rsa -b 4096 -C rwozniak89@gmail.com
+dalej puste i hasło 2x
+--$ ssh-keygen -t rsa -C altkom-sala-06
 
 $ notepad /c/USers/Student/.ssh/id_rsa.pub
 
-przekopiwoać do github konto  -> settings -> ssh... -> new ssh key -> copy paste to...
+przekopiwoać KLUCZ publiczny do github konto  -> settings -> ssh... -> new ssh key -> copy paste to...
 
 sprawdzenie klucza i połączenia $ ssh -T git@github.com -> yes 
 
